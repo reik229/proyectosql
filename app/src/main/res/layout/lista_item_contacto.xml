@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:layout_marginBottom="8dp"
+    android:background="@android:color/white"
+    android:elevation="2dp">
+
+    <TextView
+        android:id="@+id/viewNombre"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="20sp"
+        android:textColor="#000000"
+        android:text="Nombre del contacto"
+        android:paddingBottom="4dp" />
+
+    <TextView
+        android:id="@+id/viewTelefon"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="#FF9800"
+        android:textSize="16sp"
+        android:text="Número de teléfono" />
+
+    <TextView
+        android:id="@+id/viewCorreo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="#3F51B5"
+        android:textSize="16sp"
+        android:text="Correo electrónico" />
+
+</LinearLayout>
