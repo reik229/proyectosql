@@ -18,7 +18,7 @@ import java.util.ArrayList;
 
 public class ListaContactosAdapter extends RecyclerView.Adapter<ListaContactosAdapter.ContactoViewHolder> {
 
-    ArrayList<Contactos> listaContactos;
+    private ArrayList<Contactos> listaContactos;
 
     public ListaContactosAdapter(ArrayList<Contactos> listaContactos) {
         this.listaContactos = listaContactos;
@@ -27,17 +27,27 @@ public class ListaContactosAdapter extends RecyclerView.Adapter<ListaContactosAd
     @NonNull
     @Override
     public ContactoViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.lista_item_contacto, null, false);
+        // Inflar correctamente el layout sin perder las propiedades de tamaño
+        View view = LayoutInflater.from(parent.getContext())
+                .inflate(R.layout.lista_item_contacto, parent, false);
         return new ContactoViewHolder(view);
     }
 
     @Override
     public void onBindViewHolder(@NonNull ContactoViewHolder holder, int position) {
+        Contactos contacto = listaContactos.get(position);
 
-        holder.viewNombre.setText(listaContactos.get(position).getNombre());
-        holder.viewTelefono.setText(listaContactos.get(position).getTelefono());
-        holder.viewCorreo.setText(listaContactos.get(position).getCorreoElectronico());
+        holder.viewNombre.setText(contacto.getNombre());
+        holder.viewTelefono.setText(contacto.getTelefono());
+        holder.viewCorreo.setText(contacto.getCorreoElectronico());
 
+        // Efecto visual y acción al hacer clic
+        holder.itemView.setOnClickListener(v -> {
+            Context context = v.getContext();
+            Intent intent = new Intent(context, VerActivity.class);
+            intent.putExtra("ID", contacto.getId());
+            context.startActivity(intent);
+        });
     }
 
     @Override
@@ -45,27 +55,15 @@ public class ListaContactosAdapter extends RecyclerView.Adapter<ListaContactosAd
         return listaContactos.size();
     }
 
-    public class ContactoViewHolder extends RecyclerView.ViewHolder {
+    public static class ContactoViewHolder extends RecyclerView.ViewHolder {
 
         TextView viewNombre, viewTelefono, viewCorreo;
+
         public ContactoViewHolder(@NonNull View itemView) {
             super(itemView);
-
             viewNombre = itemView.findViewById(R.id.viewNombre);
             viewTelefono = itemView.findViewById(R.id.viewTelefon);
             viewCorreo = itemView.findViewById(R.id.viewCorreo);
-
-            itemView.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                    Context context = view.getContext();
-                    Intent intent = new Intent(context, VerActivity.class);
-                    intent.putExtra("ID", listaContactos.get(getAdapterPosition()).getId());
-                    context.startActivity(intent);
-                }
-            });
-
-            }
         }
     }
-
+}
