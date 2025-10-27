@@ -13,7 +13,27 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.ProyectoSql">
 
-        <!-- Actividad NUEVO -->
+        <!-- ✅ Pantalla principal al iniciar la app -->
+        <activity
+            android:name=".PrincipalActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <!-- ✅ Actividad del calendario -->
+        <activity
+            android:name=".CalendarioActivity"
+            android:exported="false" />
+
+        <!-- ✅ Actividad principal de la lista de contactos -->
+        <activity
+            android:name=".MainActivity"
+            android:exported="false" />
+
+        <!-- ✅ Actividad para agregar nuevos contactos -->
         <activity
             android:name=".NuevoActivity"
             android:exported="true"
@@ -21,35 +41,28 @@
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".MainActivity" />
-        </activity> <!-- Actividad PRINCIPAL (launcher) -->
-        <activity
-            android:name=".MainActivity"
-            android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
 
+        <!-- ✅ Actividad para ver contacto -->
         <activity
             android:name=".VerActivity"
-            android:parentActivityName=".MainActivity">
-        <meta-data
-            android:name="android.support.PARENT_ACTIVITY"
-            android:value=".MainActivity"
-
-            android:exported="false" />
-        </activity>
-        <activity
-            android:name=".EditarActivity"
+            android:exported="false"
             android:parentActivityName=".MainActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".MainActivity"
-
-                android:exported="false" />
+                android:value=".MainActivity" />
         </activity>
+
+        <!-- ✅ Actividad para editar contacto -->
+        <activity
+            android:name=".EditarActivity"
+            android:exported="false"
+            android:parentActivityName=".MainActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".MainActivity" />
+        </activity>
+
     </application>
 
 </manifest>

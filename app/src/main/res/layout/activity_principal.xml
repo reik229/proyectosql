@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:gravity="center_horizontal"
+    android:padding="32dp"
+    android:background="#2196F3"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+
+    <TextView
+        android:id="@+id/txtBienvenido"
+        android:layout_width="411dp"
+        android:layout_height="153dp"
+        android:layout_marginBottom="40dp"
+        android:gravity="center"
+        android:text="Bienvenido"
+        android:textColor="@android:color/white"
+        android:textSize="28sp"
+        android:textStyle="bold" />
+
+    <Button
+        android:id="@+id/btnCalendario"
+        android:layout_width="match_parent"
+        android:layout_height="268dp"
+        android:layout_marginBottom="20dp"
+        android:backgroundTint="@color/purple_500"
+        android:background="@drawable/boton_purple"
+        android:padding="16dp"
+        android:text="📅 Ver Calendario"
+        android:textColor="@android:color/white"
+        android:textSize="18sp" />
+
+    <Button
+        android:id="@+id/btnContactos"
+        android:layout_width="match_parent"
+        android:layout_height="296dp"
+        android:backgroundTint="@color/teal_700"
+        android:background="@drawable/boton_teal"
+        android:padding="16dp"
+        android:text="👥 Lista de Contactos"
+        android:textColor="@android:color/white"
+        android:textSize="18sp" />
+
+</LinearLayout>

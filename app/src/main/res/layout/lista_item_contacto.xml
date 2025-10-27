@@ -6,11 +6,13 @@
     android:orientation="vertical"
     android:padding="16dp"
     android:layout_margin="8dp"
-    android:background="@drawable/borde_item"
+    android:background="@drawable/fondo_contacto"
     android:clickable="true"
     android:focusable="true"
     android:elevation="6dp"
+
     android:foreground="?android:attr/selectableItemBackground">
+
 
     <!-- Nombre -->
     <LinearLayout
