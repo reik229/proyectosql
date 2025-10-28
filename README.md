@@ -38,4 +38,9 @@ Android Studio Narwhal Feature Drop | 2025.1.2 Patch 2 Build #AI-251.26094.121.2
 
 
 
+<img width="2570" height="2294" alt="Diagrama secuencia drawio" src="https://github.com/user-attachments/assets/6c3262bf-0f31-4e28-9b15-60b4880c2694" />
+<img width="1366" height="961" alt="Diagrama flujo drawio" src="https://github.com/user-attachments/assets/a28290b9-eeb0-4bed-8f40-155dc1d8e0a0" />
+
+
+
 
